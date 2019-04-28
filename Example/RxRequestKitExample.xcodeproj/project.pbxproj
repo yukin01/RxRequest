@@ -12,6 +12,8 @@
 		5B4C99062275A12D00CF30EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C99042275A12D00CF30EB /* Main.storyboard */; };
 		5B4C99082275A12E00CF30EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C99072275A12E00CF30EB /* Assets.xcassets */; };
 		5B4C990B2275A12E00CF30EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C99092275A12E00CF30EB /* LaunchScreen.storyboard */; };
+		5BD59B6C2275AEAC00CCD596 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD59B6A2275AEAC00CCD596 /* RxCocoa.framework */; };
+		5BD59B6D2275AEAC00CCD596 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD59B6B2275AEAC00CCD596 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,13 @@
 			remoteGlobalIDString = 5B4C98CA227598C400CF30EB;
 			remoteInfo = RxRequestKitTests;
 		};
+		5BD59B672275AE0000CCD596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B4C98C0227598C400CF30EB;
+			remoteInfo = RxRequestKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,8 @@
 		5B4C99072275A12E00CF30EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4C990A2275A12E00CF30EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4C990C2275A12E00CF30EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BD59B6A2275AEAC00CCD596 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		5BD59B6B2275AEAC00CCD596 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD59B6C2275AEAC00CCD596 /* RxCocoa.framework in Frameworks */,
+				5BD59B6D2275AEAC00CCD596 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 				5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */,
 				5B4C98FF2275A12D00CF30EB /* RxRequestKitExample */,
 				5B4C98FE2275A12D00CF30EB /* Products */,
+				5BD59B692275AEAC00CCD596 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +106,15 @@
 			path = RxRequestKitExample;
 			sourceTree = "<group>";
 		};
+		5BD59B692275AEAC00CCD596 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BD59B6A2275AEAC00CCD596 /* RxCocoa.framework */,
+				5BD59B6B2275AEAC00CCD596 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,10 +125,12 @@
 				5B4C98F92275A12D00CF30EB /* Sources */,
 				5B4C98FA2275A12D00CF30EB /* Frameworks */,
 				5B4C98FB2275A12D00CF30EB /* Resources */,
+				5BD59B642275ADCE00CCD596 /* Run Script for Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5BD59B682275AE0000CCD596 /* PBXTargetDependency */,
 			);
 			name = RxRequestKitExample;
 			productName = RxRequestKitExample;
@@ -181,6 +206,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BD59B642275ADCE00CCD596 /* Run Script for Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "Run Script for Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B4C98F92275A12D00CF30EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,6 +240,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BD59B682275AE0000CCD596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxRequestKit;
+			targetProxy = 5BD59B672275AE0000CCD596 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5B4C99042275A12D00CF30EB /* Main.storyboard */ = {
@@ -335,6 +391,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB328YDMA2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxRequestKitExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -353,6 +413,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB328YDMA2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxRequestKitExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
