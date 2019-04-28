@@ -14,7 +14,25 @@
 		5B4C990B2275A12E00CF30EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4C99092275A12E00CF30EB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5B095E172275A196003A9C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5B4C98C1227598C400CF30EB;
+			remoteInfo = RxRequestKit;
+		};
+		5B095E192275A196003A9C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5B4C98CA227598C400CF30EB;
+			remoteInfo = RxRequestKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxRequestKit.xcodeproj; path = ../RxRequestKit.xcodeproj; sourceTree = "<group>"; };
 		5B4C98FD2275A12D00CF30EB /* RxRequestKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxRequestKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4C99002275A12D00CF30EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B4C99022275A12D00CF30EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,9 +53,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B095E132275A196003A9C6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B095E182275A196003A9C6E /* RxRequestKit.framework */,
+				5B095E1A2275A196003A9C6E /* RxRequestKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5B4C98F42275A12D00CF30EB = {
 			isa = PBXGroup;
 			children = (
+				5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */,
 				5B4C98FF2275A12D00CF30EB /* RxRequestKitExample */,
 				5B4C98FE2275A12D00CF30EB /* Products */,
 			);
@@ -110,12 +138,35 @@
 			mainGroup = 5B4C98F42275A12D00CF30EB;
 			productRefGroup = 5B4C98FE2275A12D00CF30EB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5B095E132275A196003A9C6E /* Products */;
+					ProjectRef = 5B095E122275A196003A9C6E /* RxRequestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5B4C98FC2275A12D00CF30EB /* RxRequestKitExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5B095E182275A196003A9C6E /* RxRequestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxRequestKit.framework;
+			remoteRef = 5B095E172275A196003A9C6E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B095E1A2275A196003A9C6E /* RxRequestKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RxRequestKitTests.xctest;
+			remoteRef = 5B095E192275A196003A9C6E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B4C98FB2275A12D00CF30EB /* Resources */ = {
@@ -213,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
