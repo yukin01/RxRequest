@@ -10,6 +10,7 @@
 		5B4C98CB227598C400CF30EB /* RxRequestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4C98C1227598C400CF30EB /* RxRequestKit.framework */; };
 		5B4C98D0227598C400CF30EB /* RxRequestKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C98CF227598C400CF30EB /* RxRequestKitTests.swift */; };
 		5B4C98D2227598C400CF30EB /* RxRequestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B4C98C4227598C400CF30EB /* RxRequestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B4C98F322759FFC00CF30EB /* RxRequestKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C98F222759FFC00CF30EB /* RxRequestKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 		5B4C98CA227598C400CF30EB /* RxRequestKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxRequestKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4C98CF227598C400CF30EB /* RxRequestKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxRequestKitTests.swift; sourceTree = "<group>"; };
 		5B4C98D1227598C400CF30EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4C98DB2275999600CF30EB /* RxRequestKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RxRequestKit.xcconfig; sourceTree = "<group>"; };
+		5B4C98F222759FFC00CF30EB /* RxRequestKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxRequestKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 		5B4C98B7227598C400CF30EB = {
 			isa = PBXGroup;
 			children = (
+				5B4C98F122759FEC00CF30EB /* Sources */,
 				5B4C98C3227598C400CF30EB /* RxRequestKit */,
 				5B4C98CE227598C400CF30EB /* RxRequestKitTests */,
 				5B4C98C2227598C400CF30EB /* Products */,
@@ -73,6 +77,7 @@
 			children = (
 				5B4C98C4227598C400CF30EB /* RxRequestKit.h */,
 				5B4C98C5227598C400CF30EB /* Info.plist */,
+				5B4C98DB2275999600CF30EB /* RxRequestKit.xcconfig */,
 			);
 			path = RxRequestKit;
 			sourceTree = "<group>";
@@ -84,6 +89,14 @@
 				5B4C98D1227598C400CF30EB /* Info.plist */,
 			);
 			path = RxRequestKitTests;
+			sourceTree = "<group>";
+		};
+		5B4C98F122759FEC00CF30EB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5B4C98F222759FFC00CF30EB /* RxRequestKit.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +161,7 @@
 				TargetAttributes = {
 					5B4C98C0227598C400CF30EB = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					5B4C98C9227598C400CF30EB = {
 						CreatedOnToolsVersion = 10.2;
@@ -194,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4C98F322759FFC00CF30EB /* RxRequestKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +233,7 @@
 /* Begin XCBuildConfiguration section */
 		5B4C98D3227598C400CF30EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B4C98DB2275999600CF30EB /* RxRequestKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -268,7 +284,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,6 +297,7 @@
 		};
 		5B4C98D4227598C400CF30EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B4C98DB2275999600CF30EB /* RxRequestKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -326,7 +342,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -340,6 +355,7 @@
 		5B4C98D6227598C400CF30EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -359,6 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.yukin01.RxRequestKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -366,6 +383,7 @@
 		5B4C98D7227598C400CF30EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -392,6 +410,7 @@
 		5B4C98D9227598C400CF30EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VB328YDMA2;
@@ -410,6 +429,7 @@
 		5B4C98DA227598C400CF30EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VB328YDMA2;

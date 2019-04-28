@@ -2,11 +2,11 @@
 //  RxRequestKit.h
 //  RxRequestKit
 //
-//  Created by Kinjo on 2019/04/28.
+//  Created by yukin01 on 2019/04/28.
 //  Copyright © 2019 yukin01. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for RxRequestKit.
 FOUNDATION_EXPORT double RxRequestKitVersionNumber;
