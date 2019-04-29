@@ -18,3 +18,28 @@ public func test() -> Observable<Any> {
     let session = URLSession(configuration: .default)
     return session.rx.json(request: request)
 }
+
+public protocol State {}
+public struct Empty: State {}
+public struct HasElement<Element>: State {
+    public let element: Element
+}
+public typealias HasBaseURL = HasElement<String>
+
+public struct RxRequest<BaseURL: State> {
+    public static var builder: RxRequest<Empty> {
+        return .init(baseURLState: .init())
+    }
+    
+    public func baseURL(_ url: String) -> RxRequest<HasBaseURL> {
+        return .init(baseURLState: .init(element: url))
+    }
+    
+    private var baseURLState: BaseURL
+}
+
+
+extension RxRequest where BaseURL == HasBaseURL {
+    func build() {
+    }
+}
