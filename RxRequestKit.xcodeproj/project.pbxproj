@@ -11,6 +11,7 @@
 		5B4C98D0227598C400CF30EB /* RxRequestKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C98CF227598C400CF30EB /* RxRequestKitTests.swift */; };
 		5B4C98D2227598C400CF30EB /* RxRequestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B4C98C4227598C400CF30EB /* RxRequestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B4C98F322759FFC00CF30EB /* RxRequestKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4C98F222759FFC00CF30EB /* RxRequestKit.swift */; };
+		5B88DA4B2277106500DD5D37 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B88DA4A2277106500DD5D37 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		5B4C98D1227598C400CF30EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4C98DB2275999600CF30EB /* RxRequestKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RxRequestKit.xcconfig; sourceTree = "<group>"; };
 		5B4C98F222759FFC00CF30EB /* RxRequestKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxRequestKit.swift; sourceTree = "<group>"; };
+		5B88DA4A2277106500DD5D37 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4C98F222759FFC00CF30EB /* RxRequestKit.swift */,
+				5B88DA4A2277106500DD5D37 /* Request.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4C98F322759FFC00CF30EB /* RxRequestKit.swift in Sources */,
+				5B88DA4B2277106500DD5D37 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
