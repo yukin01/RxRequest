@@ -8,68 +8,82 @@
 
 import Foundation
 
-public protocol State {}
-public struct Empty: State {}
-public struct HasElement<Element>: State {
+public class State {}
+public class Empty: State {}
+public class HasElement<Element>: State {
     public let element: Element
-}
-public typealias HasString = HasElement<String>
-public typealias HasOptions = HasElement<(URLRequest.CachePolicy, TimeInterval)>
-
-public enum Method: String {
-    case get
-    case post
-    case put
-    case patch
-    case delete
-}
-
-extension Method: CustomStringConvertible {
-    public var description: String {
-        return self.rawValue.uppercased()
+    init(element: Element) {
+        self.element = element
     }
 }
 
+public typealias HasString = HasElement<String>
+public typealias HasDictionary = HasElement<[String: String]>
+public typealias HasOptions = HasElement<(URLRequest.CachePolicy, TimeInterval)>
 public typealias HasMethod = HasElement<Method>
 
-public struct Request<BaseURLState: State, OptionsState: State, MethodState: State> {
+public struct Request<BaseURLState: State, QueryState: State, OptionsState: State, MethodState: State> {
     
-    public static var builder: Request<Empty, Empty, Empty> {
-        return .init(baseURLState: .init(), optionsState: .init(), methodState: .init())
+    private let baseURLState: BaseURLState
+    private let queryState: QueryState
+    private let optionsState: OptionsState
+    private let methodState: MethodState
+    
+    public static var builder: Request<Empty, Empty, Empty, Empty> {
+        return .init(
+            baseURLState: .init(),
+            queryState: .init(),
+            optionsState: .init(),
+            methodState: .init()
+        )
     }
     
-    public func set(baseURL: String) -> Request<HasString, OptionsState, MethodState> {
+    public func set(baseURL: String) -> Request<HasString, QueryState, OptionsState, MethodState> {
         return .init(
             baseURLState: .init(element: baseURL),
+            queryState: queryState,
+            optionsState: optionsState,
+            methodState: methodState
+        )
+    }
+    
+    public func set(query: [String: String]) -> Request<BaseURLState, HasDictionary, OptionsState, MethodState> {
+        return .init(
+            baseURLState: baseURLState,
+            queryState: .init(element: query),
             optionsState: optionsState,
             methodState: methodState
         )
     }
     
     public func set(cachePolicy: URLRequest.CachePolicy, timeoutInterval: TimeInterval)
-        -> Request<BaseURLState, HasOptions, MethodState> {
+        -> Request<BaseURLState, QueryState, HasOptions, MethodState> {
         return .init(
             baseURLState: baseURLState,
+            queryState: queryState,
             optionsState: .init(element: (cachePolicy, timeoutInterval)),
             methodState: methodState
         )
     }
     
-    public func set(method: Method) -> Request<BaseURLState, OptionsState, HasMethod> {
+    public func set(method: Method) -> Request<BaseURLState, QueryState, OptionsState, HasMethod> {
         return .init(
             baseURLState: baseURLState,
+            queryState: queryState,
             optionsState: optionsState,
             methodState: .init(element: method)
         )
     }
-    
-    private var baseURLState: BaseURLState
-    private var optionsState: OptionsState
-    private var methodState: MethodState
 }
 
-extension Request where BaseURLState == HasString, MethodState == HasMethod {
+extension Request where BaseURLState == HasString {
     public func build() -> URLRequest? {
+        guard var components = URLComponents(string: baseURLState.element) else { return nil }
+        
+        if let q = queryState as? HasDictionary {
+            components.queryItems = q.element.map { URLQueryItem(name: $0, value: $1) }
+        }
+        
         guard let url = URL(string: baseURLState.element) else { return nil }
         
         var request: URLRequest
@@ -80,7 +94,9 @@ extension Request where BaseURLState == HasString, MethodState == HasMethod {
             request = URLRequest(url: url)
         }
         
-        request.httpMethod = methodState.element.description
+        if let m = methodState as? HasMethod {
+            request.httpMethod = m.element.description
+        }
         
         return request
     }

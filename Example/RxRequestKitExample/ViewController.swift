@@ -15,9 +15,7 @@ class ViewController: UIViewController {
     let SEARCH_REPOSITORIES = "https://api.github.com/search/repositories?q=rxswift+language:swift&sort=stars&order=desc&per_page=1"
     
     func test() -> Observable<Any> {
-        //    guard let url = URL(string: SEARCH_REPOSITORIES) else { fatalError() }
-        //    let request = URLRequest(url: url)
-        let request = Request<HasString, Empty, HasMethod>.builder.set(baseURL: SEARCH_REPOSITORIES).set(method: .get).build()!
+        let request = Request.builder.set(baseURL: SEARCH_REPOSITORIES).set(method: .get).build()!
         let session = URLSession(configuration: .default)
         return session.rx.json(request: request)
     }
