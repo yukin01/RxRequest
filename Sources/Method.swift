@@ -1,5 +1,5 @@
 //
-//  HTTPMethod.swift
+//  Method.swift
 //  RxRequestKit
 //
 //  Created by yukin01 on 2019/04/29.
