@@ -94,7 +94,7 @@ public struct Request<BaseURLState: State, QueryState: State, OptionsState: Stat
 }
 
 extension Request where BaseURLState == HasString {
-    public func build() -> URLRequest? {
+    public func buildRequest() -> URLRequest? {
         guard var components = URLComponents(string: baseURLState.element) else { return nil }
         
         if let q = queryState as? HasDictionary {
